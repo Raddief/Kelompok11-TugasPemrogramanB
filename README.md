@@ -1,5 +1,4 @@
-
-<h1 align="center">Pemprograman B Komputasi Numerik</h1>
+<h1 align="center">Pemrograman B Komputasi Numerik</h1>
 
 
 <h3 align="center">Kelompok 11</h3>
@@ -38,6 +37,36 @@ Pemilihan parameter ini bertujuan untuk:
 
 Metode ini menjadi pilihan ideal untuk kasus pertumbuhan populasi dengan laju tetap yang memerlukan **efisiensi komputasi** tanpa mengorbankan **akurasi prediksi**.
 
+## Penjelasan Program C
+
+Program C yang disediakan (berjudul `TugasPemrogramanB_11.c`) digunakan untuk memprediksi pertumbuhan populasi dengan **metode Heun tanpa iterasi** pada persamaan diferensial biasa (ODE) berbentuk `dP/dt = G*P`. Program ini membandingkan hasil estimasi numerik dengan solusi analitik (eksak) dan menghitung error-nya.
+
+### Fitur Program:
+- **Input Fleksibel:** Pengguna dapat memilih menggunakan parameter preset (studi kasus) atau memasukkan nilai sendiri (populasi awal, laju pertumbuhan, ukuran langkah, dan waktu prediksi).
+- **Perhitungan Otomatis:** Program menghitung jumlah langkah penuh dan sisa waktu jika periode simulasi tidak habis dibagi ukuran langkah.
+- **Metode Heun Tertutup:** Untuk ODE linier, digunakan rumus faktor pengali khusus sehingga tidak perlu iterasi pada setiap langkah.
+- **Tabel Hasil:** Setiap langkah menampilkan waktu, populasi hasil metode Heun, populasi eksak, dan error relatif (%).
+- **Ringkasan:** Di akhir, program menampilkan hasil akhir, error absolut dan relatif, serta penjelasan singkat tentang metode yang digunakan.
+
+### Alur Program:
+1. **Pengantar dan Pilihan Input:** Menjelaskan metode dan meminta pengguna memilih parameter preset atau input manual.
+2. **Validasi Input:** Memastikan semua nilai yang dimasukkan positif.
+3. **Perhitungan:** Menggunakan rumus Heun tertutup untuk setiap langkah waktu, serta menghitung solusi analitik untuk perbandingan.
+4. **Output:** Menampilkan tabel hasil per langkah dan ringkasan perbandingan metode numerik dan analitik.
+
+### Contoh Output:
+```
+ n   |  t (tahun)  |    Populasi (Heun)    |   Populasi (Analitik)   |  Error (%)
+-------------------------------------------------------------------------------
+  0  |      0.00   |             6000.00   |                6000.00   |    0.0000
+  1  |      0.5    |             6222.19   |                6222.23   |    0.0001
+  2  |      1.0    |             6455.23   |                6455.25   |    0.0000
+...
+```
+
+### Catatan:
+- Program ini efisien untuk ODE linier karena tidak memerlukan iterasi pada setiap langkah.
+- Untuk ODE nonlinier, metode Heun biasanya memerlukan evaluasi slope pada titik tengah dan iterasi.
 
 ## Installation Guide
 
